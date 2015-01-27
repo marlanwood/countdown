@@ -7,6 +7,12 @@ if (PHP_SAPI !== 'cli') {
 function countdown($seconds)
 {
     // ...
+	if ($seconds > 0) {
+		echo $seconds . "\n";;
+		usleep(1000000);
+		$seconds = $seconds - 1;
+		countdown($seconds);
+	}
 }
 
 countdown(5);
